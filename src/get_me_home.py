@@ -11,7 +11,7 @@ class GetMeHome:
 
         while True:
             print("How do you want to get home?")
-            print("  [bike]\n  [car]\n  [train]\n  [foot]")
+            print("  [bike]\n  [car]\n  [metro]\n  [foot]")
             print("  [quit] to stop")
 
             user_choice = input()

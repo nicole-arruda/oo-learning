@@ -25,3 +25,12 @@ class TestPathFinder(TestCase):
                                                    "3. Take the path through the diag.\n"
                                                    "4. Head west on Lakeshore Drive.\n"
                                                    "5. You're home!")
+
+    def test_best_path_for_travel_by_metro(self):
+        self.path_finder.best_path_for_travel_by("metro")
+
+        self.mock_printer.print.assert_called_with(f"Just hop on the Indigo Line, easy peasy!\n"
+                                                   f"Here's your metro card:\n"
+                                                   f"  ----------------\n"
+                                                   f"  > TOTAL: $5.70 <\n"
+                                                   f"  ----------------")

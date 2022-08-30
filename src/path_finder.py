@@ -1,3 +1,6 @@
+from metro_card import MetroCard
+
+
 class PathFinder:
     def __init__(self, print_wrapper):
         self.printer = print_wrapper
@@ -12,6 +15,13 @@ class PathFinder:
             self._add_step("5. You're home!")
 
             self.printer.print(self.steps)
+        elif mode_of_transportation == "metro":
+            metro_card = MetroCard(5.7)
+            self.printer.print(f"Just hop on the Indigo Line, easy peasy!\n"
+                               f"Here's your metro card:\n"
+                               f"  ----------------\n"
+                               f"  > TOTAL: {metro_card.total_on_card} <\n"
+                               f"  ----------------")
         else:
             self.printer.print("I don't know how to handle that...")
 

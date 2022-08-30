@@ -43,3 +43,13 @@ class TestPathFinder(TestCase):
                                                    f"  ----------------\n"
                                                    f"  > TOTAL: $5.70 <\n"
                                                    f"  ----------------")
+
+    def test_two_sets_of_steps_in_a_row_prints_only_second_set(self):
+        self.path_finder.best_path_for_travel_by("car")
+        self.path_finder.best_path_for_travel_by("bike")
+
+        self.mock_printer.print.assert_called_with("1. Make sure to wear your helmet!\n"
+                                                   "2. Head north on Main Street.\n"
+                                                   "3. Take the path through the diag.\n"
+                                                   "4. Head west on Lakeshore Drive.\n"
+                                                   "5. You're home!")

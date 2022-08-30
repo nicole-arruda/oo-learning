@@ -26,6 +26,15 @@ class TestPathFinder(TestCase):
                                                    "4. Head west on Lakeshore Drive.\n"
                                                    "5. You're home!")
 
+    def test_best_path_for_travel_by_car(self):
+        self.path_finder.best_path_for_travel_by("car")
+
+        self.mock_printer.print.assert_called_with("1. Head north on Main Street.\n"
+                                                   "2. Head east on College Street.\n"
+                                                   "3. Head north on University Ave.\n"
+                                                   "4. Head west on Lakeshore Drive.\n"
+                                                   "5. You're home!")
+
     def test_best_path_for_travel_by_metro(self):
         self.path_finder.best_path_for_travel_by("metro")
 

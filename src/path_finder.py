@@ -15,6 +15,14 @@ class PathFinder:
             self._add_step("5. You're home!")
 
             self.printer.print(self.steps)
+        elif mode_of_transportation == "car":
+            self._add_step("1. Head north on Main Street.")
+            self._add_step("2. Head east on College Street.")
+            self._add_step("3. Head north on University Ave.")
+            self._add_step("4. Head west on Lakeshore Drive.")
+            self._add_step("5. You're home!")
+
+            self.printer.print(self.steps)
         elif mode_of_transportation == "metro":
             metro_card = MetroCard(5.7)
             self.printer.print(f"Just hop on the Indigo Line, easy peasy!\n"

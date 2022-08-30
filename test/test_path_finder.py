@@ -44,8 +44,19 @@ class TestPathFinder(TestCase):
                                                    f"  > TOTAL: $5.70 <\n"
                                                    f"  ----------------")
 
+    def test_best_path_for_travel_by_foot(self):
+        self.path_finder.best_path_for_travel_by("foot")
+
+        self.mock_printer.print.assert_called_with("1. Head west on First Ave.\n"
+                                                   "2. Cut north through the high school.\n"
+                                                   "3. Head west on College Street.\n"
+                                                   "4. Take the path through the diag.\n"
+                                                   "5. Head west on Lakeshore Drive.\n"
+                                                   "6. You're home!")
+
     def test_two_sets_of_steps_in_a_row_prints_only_second_set(self):
         self.path_finder.best_path_for_travel_by("car")
+        self.path_finder.best_path_for_travel_by("foot")
         self.path_finder.best_path_for_travel_by("bike")
 
         self.mock_printer.print.assert_called_with("1. Make sure to wear your helmet!\n"

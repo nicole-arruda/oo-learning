@@ -1,6 +1,6 @@
 from random import randint
 
-from path_finder import PathFinder
+from first_approach.path_finder import PathFinder
 from print_wrapper import PrintWrapper
 
 

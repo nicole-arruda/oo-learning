@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest.mock import patch
 
-from path_finder import PathFinder
+from first_approach.path_finder import PathFinder
 
 
 class TestPathFinder(TestCase):

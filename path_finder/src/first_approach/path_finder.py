@@ -1,4 +1,4 @@
-from first_approach.metro_card import MetroCard
+from metro_card import MetroCard
 
 
 class PathFinder:

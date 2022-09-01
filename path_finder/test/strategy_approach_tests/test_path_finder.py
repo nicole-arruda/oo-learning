@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 from strategy_approach.by_bike import ByBike
 from strategy_approach.by_car import ByCar
+from strategy_approach.by_metro import ByMetro
 from strategy_approach.by_unknown_transportation import ByUnknownTransportation
 
 from strategy_approach.path_finder import PathFinder
@@ -40,9 +41,8 @@ class TestPathFinder(TestCase):
                                                    "4. Head west on Lakeshore Drive.\n"
                                                    "5. You're home!")
 
-    @skip
     def test_best_path_for_travel_by_metro(self):
-        self.path_finder.best_path_for_travel_by(self.DEFAULT_STRATEGY)
+        self.path_finder.best_path_for_travel_by(ByMetro())
 
         self.mock_printer.print.assert_called_with(f"Just hop on the Indigo Line, easy peasy!\n"
                                                    f"Here's your metro card:\n"

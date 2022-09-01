@@ -1,5 +1,8 @@
 from random import randint
 
+from strategy_approach.by_bike import ByBike
+from strategy_approach.by_unknown_transportation import ByUnknownTransportation
+from strategy_approach.path_finder_strategy import PathFinderStrategy
 from strategy_approach.path_finder import PathFinder
 from print_wrapper import PrintWrapper
 
@@ -24,8 +27,11 @@ class GetMeHome:
             if user_choice == "quit":
                 break
 
-            mode_of_transportation = user_choice
+            if user_choice == "bike":
+                strategy = ByBike()
+            else:
+                strategy = ByUnknownTransportation()
 
-            path_finder.best_path_for_travel_by(mode_of_transportation, weather)
+            path_finder.best_path_for_travel_by(strategy)
             print("=====")
             print()

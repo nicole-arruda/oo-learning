@@ -1,4 +1,4 @@
-from strategy_approach.path_finder_strategy import PathFinderStrategy
+from strategy_approach.path_finder_strategy.path_finder_strategy import PathFinderStrategy
 
 
 class ByFoot(PathFinderStrategy):

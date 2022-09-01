@@ -2,6 +2,7 @@ from unittest import TestCase, skip
 from unittest.mock import patch
 
 from strategy_approach.by_bike import ByBike
+from strategy_approach.by_car import ByCar
 from strategy_approach.by_unknown_transportation import ByUnknownTransportation
 
 from strategy_approach.path_finder import PathFinder
@@ -30,9 +31,8 @@ class TestPathFinder(TestCase):
                                                    "4. Head west on Lakeshore Drive.\n"
                                                    "5. You're home!")
 
-    @skip
     def test_best_path_for_travel_by_car(self):
-        self.path_finder.best_path_for_travel_by(self.DEFAULT_STRATEGY)
+        self.path_finder.best_path_for_travel_by(ByCar())
 
         self.mock_printer.print.assert_called_with("1. Head north on Main Street.\n"
                                                    "2. Head east on College Street.\n"

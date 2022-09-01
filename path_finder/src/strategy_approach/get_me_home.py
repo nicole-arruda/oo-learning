@@ -36,7 +36,7 @@ class GetMeHome:
             elif user_choice == "metro":
                 strategy = ByMetro()
             elif user_choice == "foot":
-                strategy = ByFoot()
+                strategy = ByFoot(weather)
             else:
                 strategy = ByUnknownTransportation()
 

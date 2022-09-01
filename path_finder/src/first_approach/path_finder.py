@@ -14,7 +14,7 @@ class PathFinder:
             self._add_step("4. Head west on Lakeshore Drive.")
             self._add_step("5. You're home!")
 
-            self.printer.print(self.steps)
+            self.printer.print(self.steps + "\n=====\n")
             self.steps = ""
         elif mode_of_transportation == "car":
             self._add_step("1. Head north on Main Street.")
@@ -23,7 +23,7 @@ class PathFinder:
             self._add_step("4. Head west on Lakeshore Drive.")
             self._add_step("5. You're home!")
 
-            self.printer.print(self.steps)
+            self.printer.print(self.steps + "\n=====\n")
             self.steps = ""
         elif mode_of_transportation == "metro":
             metro_card = MetroCard(5.7)
@@ -31,7 +31,8 @@ class PathFinder:
                                f"Here's your metro card:\n"
                                f"  ----------------\n"
                                f"  > TOTAL: {metro_card.total_on_card} <\n"
-                               f"  ----------------")
+                               f"  ----------------\n"
+                               f"=====\n")
         elif mode_of_transportation == "foot":
             if weather == "rain":
                 self._add_step("1. Make sure to take your umbrella!")
@@ -43,7 +44,7 @@ class PathFinder:
                 self._add_step("7. Head west on Lakeshore Drive.")
                 self._add_step("8. You're home!")
 
-                self.printer.print(self.steps)
+                self.printer.print(self.steps + "\n=====\n")
                 self.steps = ""
             else:
                 self._add_step("1. Head west on First Ave.")
@@ -53,11 +54,11 @@ class PathFinder:
                 self._add_step("5. Head west on Lakeshore Drive.")
                 self._add_step("6. You're home!")
 
-                self.printer.print(self.steps)
+                self.printer.print(self.steps + "\n=====\n")
                 self.steps = ""
 
         else:
-            self.printer.print("I don't know how to handle that...")
+            self.printer.print("I don't know how to handle that...\n=====\n")
 
     def _add_step(self, step):
         if len(self.steps) == 0:

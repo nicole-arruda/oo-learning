@@ -6,4 +6,7 @@ class PathFinder:
         self.printer = print_wrapper
 
     def best_path_for_travel_by(self, strategy: PathFinderStrategy):
-        self.printer.print(strategy.find_path())
+        path = strategy.find_path()
+        path += "\n=====\n"
+
+        self.printer.print(path)

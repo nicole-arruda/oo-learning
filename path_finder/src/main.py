@@ -1,5 +1,4 @@
-from first_approach.get_me_home import GetMeHome
-# from strategy_approach.get_me_home import GetMeHome
+from highly_advanced_ui import HighlyAdvancedUI
 
 if __name__ == '__main__':
-    GetMeHome().run()
+    HighlyAdvancedUI().start()

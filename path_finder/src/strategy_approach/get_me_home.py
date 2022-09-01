@@ -1,5 +1,3 @@
-from random import randint
-
 from strategy_approach.path_finder_strategy.by_bike import ByBike
 from strategy_approach.path_finder_strategy.by_car import ByCar
 from strategy_approach.path_finder_strategy.by_foot import ByFoot
@@ -10,36 +8,20 @@ from print_wrapper import PrintWrapper
 
 
 class GetMeHome:
-    def __init__(self):
-        self.weather = ["sun", "rain", "snow"]
 
-    def run(self):
-        path_finder = PathFinder(PrintWrapper())
+    def __init__(self, print_wrapper=PrintWrapper()):
+        self.path_finder = PathFinder(print_wrapper)
 
-        while True:
-            weather = self.weather[randint(0, 2)]
-            print(f"Today's weather: {weather}")
-            print()
+    def run(self, mode_of_transportation, weather):
+        if mode_of_transportation == "bike":
+            strategy = ByBike()
+        elif mode_of_transportation == "car":
+            strategy = ByCar()
+        elif mode_of_transportation == "metro":
+            strategy = ByMetro()
+        elif mode_of_transportation == "foot":
+            strategy = ByFoot(weather)
+        else:
+            strategy = ByUnknownTransportation()
 
-            print("How do you want to get home?")
-            print("  [bike]\n  [car]\n  [metro]\n  [foot]")
-            print("  [quit] to stop")
-
-            user_choice = input()
-            if user_choice == "quit":
-                break
-
-            if user_choice == "bike":
-                strategy = ByBike()
-            elif user_choice == "car":
-                strategy = ByCar()
-            elif user_choice == "metro":
-                strategy = ByMetro()
-            elif user_choice == "foot":
-                strategy = ByFoot(weather)
-            else:
-                strategy = ByUnknownTransportation()
-
-            path_finder.best_path_for_travel_by(strategy)
-            print("=====")
-            print()
+        self.path_finder.best_path_for_travel_by(strategy)

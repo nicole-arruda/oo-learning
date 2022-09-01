@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 from strategy_approach.by_bike import ByBike
 from strategy_approach.by_car import ByCar
+from strategy_approach.by_foot import ByFoot
 from strategy_approach.by_metro import ByMetro
 from strategy_approach.by_unknown_transportation import ByUnknownTransportation
 
@@ -50,9 +51,8 @@ class TestPathFinder(TestCase):
                                                    f"  > TOTAL: $5.70 <\n"
                                                    f"  ----------------")
 
-    @skip
     def test_best_path_for_travel_by_foot(self):
-        self.path_finder.best_path_for_travel_by(self.DEFAULT_STRATEGY)
+        self.path_finder.best_path_for_travel_by(ByFoot())
 
         self.mock_printer.print.assert_called_with("1. Head west on First Ave.\n"
                                                    "2. Cut north through the high school.\n"

@@ -2,6 +2,7 @@ from random import randint
 
 from strategy_approach.by_bike import ByBike
 from strategy_approach.by_car import ByCar
+from strategy_approach.by_foot import ByFoot
 from strategy_approach.by_metro import ByMetro
 from strategy_approach.by_unknown_transportation import ByUnknownTransportation
 from strategy_approach.path_finder import PathFinder
@@ -34,6 +35,8 @@ class GetMeHome:
                 strategy = ByCar()
             elif user_choice == "metro":
                 strategy = ByMetro()
+            elif user_choice == "foot":
+                strategy = ByFoot()
             else:
                 strategy = ByUnknownTransportation()
 
